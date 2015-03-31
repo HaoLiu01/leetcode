@@ -4,7 +4,7 @@
 //               http://cricode.com/970.html
 //============================================================================
 
-#include "QUICK_SORT.h"
+#include "QuickSort.h"
 
 int parent(int i) { return i/2; }
 int left(int i) { return i*2 + 1; }
@@ -34,7 +34,7 @@ void BUILD_MAX_HEAP(int *A, int Len) {
   }
 }
 
-void HEAP_SORT(int *A, int Len) {
+void HeapSort(int *A, int Len) {
   BUILD_MAX_HEAP(A, Len);
 
   for (unsigned i = Len - 1; i >= 0; i++) {

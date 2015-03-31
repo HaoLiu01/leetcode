@@ -1,6 +1,8 @@
 #include<iostream>
-#include "QUICK_SORT.h"
-#include "QUICK_SELECT.h"
+#include "QuickSort.h"
+#include "QuickSelect.h"
+#include "HeapSort.h"
+#include "MergeSort.h"
 
 using namespace std;
 
@@ -33,7 +35,33 @@ void TEST_QSort() {
   printArray(array, 10, 0);
 }
 
+void TEST_HeapSort() {
+  cout <<"Test HeapSort" <<endl;
+  int array[10] = {1, 8, 7 , 6, 9, 10, 2, 3, 16, 4};
+  cout << "Before: ";
+  printArray(array, 10, 0);
+
+  HeapSort(array, 10);
+
+  cout << "After: ";
+  printArray(array, 10, 0);
+}
+
+void TEST_MergeSort() {
+  cout <<"Test MergeSort" <<endl;
+  int array[10] = {1, 8, 7 , 6, 9, 10, 2, 3, 16, 4};
+  cout << "Before: ";
+  printArray(array, 10, 0);
+
+  MergeSort(array, 0, 9);
+
+  cout << "After: ";
+  printArray(array, 10, 0);
+}
+
 int main() {
-  TEST_QSort();
-  TEST_QSelect();
+//  TEST_QSort();
+//  TEST_QSelect();
+//  TEST_HeapSort();
+  TEST_MergeSort();
 }
