@@ -1,7 +1,7 @@
 #ifndef QUICK_SORT_H
 #define QUICK_SORT_H
 
-void exchange(int *array, int i, int j);
+void Exchange(int *array, int i, int j);
 
 int partition(int *array, int s, int t);
 

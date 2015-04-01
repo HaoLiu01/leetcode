@@ -15,16 +15,15 @@ void printArray(int *array, int length, int start = 0) {
 void TEST_QSelect() {
   cout << "TEST QSelect\n";
 
-  int A[] = {10, 8, 6, 4, 2, 0, 9, 7, 5, 3, 1 };
+  int A[] = { 10, 8, 6, 4, 2, 0, 9, 7, 5, 3, 1 };
   int Kth = quick_select(A, 6, 2, 10);
   cout << Kth << endl;
 }
 
-
 void TEST_QSort() {
   cout << "TEST QSort\n";
 
-  int array[10] = {1, 8, 7 , 6, 9, 10, 2, 3, 16, 4};
+  int array[10] = { 1, 8, 7, 6, 9, 10, 2, 3, 16, 4 };
 
   cout << "Before: ";
   printArray(array, 10, 0);
@@ -36,8 +35,8 @@ void TEST_QSort() {
 }
 
 void TEST_HeapSort() {
-  cout <<"Test HeapSort" <<endl;
-  int array[10] = {1, 8, 7 , 6, 9, 10, 2, 3, 16, 4};
+  cout << "Test HeapSort" << endl;
+  int array[10] = { 1, 8, 7, 6, 9, 10, 2, 3, 16, 4 };
   cout << "Before: ";
   printArray(array, 10, 0);
 
@@ -48,12 +47,12 @@ void TEST_HeapSort() {
 }
 
 void TEST_MergeSort() {
-  cout <<"Test MergeSort" <<endl;
-  int array[10] = {1, 8, 7 , 6, 9, 10, 2, 3, 16, 4};
+  cout << "Test MergeSort" << endl;
+  int array[10] = { 1, 8, 7, 6, 9, 10, 2, 3, 16, 4 };
   cout << "Before: ";
   printArray(array, 10, 0);
 
-  MergeSort(array, 0, 9);
+  MergeSort(array, 0, 10);
 
   cout << "After: ";
   printArray(array, 10, 0);
@@ -63,5 +62,5 @@ int main() {
 //  TEST_QSort();
 //  TEST_QSelect();
 //  TEST_HeapSort();
-  TEST_MergeSort();
+//  TEST_MergeSort();
 }
