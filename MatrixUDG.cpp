@@ -11,13 +11,13 @@
 class MatrixUDG {
   /*
    * Matrix is like (If NumV is 6):
-   *  T   0 1 2 3 4 5
-   *      0 0 0 T 0 T
-   *      1 0 T 0 T 0
-   *      2 T 0
-   *      3 0 T
-   *      4 T 0
-   *  T   5
+   *           Zer One Two Thr Fou Fiv
+   *      Zer   F   F   F   T   F   T
+   *      One   F   F   T   F   T   F
+   *      Two   F   T   F   T   F   T
+   *      Thr   T   F   T   F   T   F
+   *      Fou   F   T   F   T   F   T
+   *      Fiv   T   F   T   F   T   F
    * */
 
 public:
@@ -41,4 +41,4 @@ bool E[MAX][MAX];
 
 void MatrixUDG::BFS() {
 
-  }
+}
