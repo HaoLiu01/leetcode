@@ -60,7 +60,8 @@ void TEST_MergeSort() {
 
 int main() {
 //  TEST_QSort();
-//  TEST_QSelect();
+  TEST_QSelect();
 //  TEST_HeapSort();
 //  TEST_MergeSort();
+  return 0;
 }
