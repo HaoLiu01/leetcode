@@ -1,0 +1,13 @@
+import os
+
+env = Environment()
+
+env['ENV']['PATH'] = os.environ['PATH']
+
+env.Append(CPPPATH = ['include'])
+env.Append(CCFLAGS = ['-O0', '-g'])
+
+
+srcs = Glob('Source/*.cpp')
+objs = env.Object(srcs) 
+env.Program('test', objs)

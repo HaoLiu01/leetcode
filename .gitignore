@@ -1,2 +1,5 @@
-*.o
-test
+build
+.cproject
+.project
+.sconsign.dblite
+.settings/
