@@ -8,6 +8,6 @@ env.Append(CPPPATH = ['include'])
 env.Append(CCFLAGS = ['-O0', '-g'])
 
 
-srcs = Glob('Source/*.cpp')
+srcs = Glob('Sort/*.cpp')
 objs = env.Object(srcs) 
-env.Program('test', objs)
+env.Program('test-sort', objs)

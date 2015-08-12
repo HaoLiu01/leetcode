@@ -1,0 +1,8 @@
+import os
+
+env = Environment()
+
+env.Append(CPPPATH = ['.'])
+env.Append(CCFLAGS = ['-O0', '-g'])
+
+env.Program('test-leetcode', 'TEST.cpp')
