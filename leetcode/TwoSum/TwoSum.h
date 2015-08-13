@@ -2,14 +2,15 @@
 
 using namespace std;
 
+// Time Limit Exceeded
 class Solution {
 public:
-  vector<int> TwoSum(vector<int> &numbers, int target) {
+  vector<int> TwoSum(vector<int> &nums, int target) {
     vector<int> result;
 
-    for (int i = 0; i < numbers.size(); i++) {
-      for (int j = i + 1; j < numbers.size(); j++) {
-        if (numbers[i] + numbers[j] == target) {
+    for (int i = 0; i < nums.size(); i++) {
+      for (int j = i + 1; j < nums.size(); j++) {
+        if (nums[i] + nums[j] == target) {
           result.push_back(i);
           result.push_back(j);
           return result;
