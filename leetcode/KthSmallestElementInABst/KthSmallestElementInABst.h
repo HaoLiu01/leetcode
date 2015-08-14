@@ -20,22 +20,36 @@
  * Credits:Special thanks to @ts for adding this problem and creating all test cases.
  **********************************************************************************/
 
+// Definition for a binary tree node.
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) :
+            val(x), left(NULL), right(NULL) {
+    }
+};
 
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */
 class Solution {
 public:
-
+    int count(TreeNode* node) {
+        if (!node)
+            return 0;
+        return count(node->left) + count(node->right) + 1;
+    }
 
     int kthSmallest(TreeNode* root, int k) {
-        //return kthSmallestHelper_nonRecursive(root, k);
-        return kthSmallestHelper_recursive(root, k);
+        int num = count(root->left);
+
+        // The smallest one;
+        if (num == k - 1) {
+            return root->val;
+        }
+
+        if (num < k - 1) {
+            return kthSmallest(root->right, k - num - 1);
+        }
+
+        return kthSmallest(root->left, k);
     }
 };
