@@ -44,6 +44,10 @@ using namespace std;
 //};
 
 // Use space to save time.
+// Wrong Answer
+// Input: [3,2,4], 6
+// Output: [1,2]
+// Expected: [2,3] 
 class Solution {
 public:
   vector<int> TwoSum(vector<int> &nums, int target) {
@@ -55,8 +59,8 @@ public:
 
       // Find two indices.
       if (cache.count(other)) {
-        result.push_back(cache[other]);
-        result.push_back(i);
+        result.push_back(cache[other] + 1);
+        result.push_back(i + 1);
         return result;
       }
 
