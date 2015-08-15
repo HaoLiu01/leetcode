@@ -9,7 +9,6 @@
 #ifndef LEETCODE_KTHSMALLESTELEMENTINABST_KTHSMALLESTELEMENTINABST_H_
 #define LEETCODE_KTHSMALLESTELEMENTINABST_KTHSMALLESTELEMENTINABST_H_
 
-
 /**********************************************************************************
  *
  * Given a binary search tree, write a function kthSmallest to find the kth smallest element in it.
@@ -28,65 +27,50 @@
  * Credits:Special thanks to @ts for adding this problem and creating all test cases.
  **********************************************************************************/
 
-// Definition for a binary tree node.
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) :
-            val(x), left(NULL), right(NULL) {
-    }
-};
+#include "utils.h"
 
 // This is accepted.
 // But not efficient.
-class Solution_ng {
-public:
-    int count(TreeNode* node) {
-        if (!node)
-            return 0;
-        return count(node->left) + count(node->right) + 1;
+int count(TreeNode* node) {
+    if (!node)
+        return 0;
+    return count(node->left) + count(node->right) + 1;
+}
+
+int kthSmallest_ng(TreeNode* root, int k) {
+    int num = count(root->left);
+
+    // The smallest one;
+    if (num == k - 1) {
+        return root->val;
     }
 
-    int kthSmallest(TreeNode* root, int k) {
-        int num = count(root->left);
-
-        // The smallest one;
-        if (num == k - 1) {
-            return root->val;
-        }
-
-        if (num < k - 1) {
-            return kthSmallest(root->right, k - num - 1);
-        }
-
-        return kthSmallest(root->left, k);
-    }
-};
-
-class Solution {
-public:
-    // Count down k from the smallest element.
-    // When K == 0, we get the kth.
-    int countDown(TreeNode* node, int &k) {
-        if (!node)
-            return 0;
-
-        // Visit left nodes first
-        int result = countDown(node->left, k);
-        if (k == 0)
-            return result;
-
-        if (--k == 0)
-            return node->val;
-
-        return countDown(node->right, k);
+    if (num < k - 1) {
+        return kthSmallest_ng(root->right, k - num - 1);
     }
 
-    int kthSmallest(TreeNode* root, int k) {
-        return countDown(root, k);
-    }
-};
+    return kthSmallest_ng(root->left, k);
+}
 
+// Count down k from the smallest element.
+// When K == 0, we get the kth.
+int countDown(TreeNode* node, int &k) {
+    if (!node)
+        return 0;
+
+    // Visit left nodes first
+    int result = countDown(node->left, k);
+    if (k == 0)
+        return result;
+
+    if (--k == 0)
+        return node->val;
+
+    return countDown(node->right, k);
+}
+
+int kthSmallest(TreeNode* root, int k) {
+    return countDown(root, k);
+}
 
 #endif /* LEETCODE_KTHSMALLESTELEMENTINABST_KTHSMALLESTELEMENTINABST_H_ */

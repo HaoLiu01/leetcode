@@ -35,10 +35,10 @@ void google_ABandK(int *A, int *B, int AL, int BL, int k) {
   int count = 0;
   for (int i = 0; i < AL * BL; i++)
     if (C[i] < KthV) {
-      std::cout << C[i] << " ";
+      std::std::cout << C[i] << " ";
       count++;
     }
 
   for (int i = 0; i < k - count; i++)
-    std::cout << KthV << "";
+    std::std::cout << KthV << "";
 }
