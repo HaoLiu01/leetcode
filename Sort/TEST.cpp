@@ -8,53 +8,53 @@ using namespace std;
 
 void printArray(int *array, int length, int start = 0) {
   for (int i = 0; i < length; i++)
-    cout << array[i] << " ";
-  cout << endl;
+    std::cout << array[i] << " ";
+  std::cout << std::endl;
 }
 
 void TEST_QSelect() {
-  cout << "TEST QSelect\n";
+  std::cout << "TEST QSelect\n";
 
   int A[] = { 10, 8, 6, 4, 2, 0, 9, 7, 5, 3, 1 };
   int Kth = quick_select(A, 6, 2, 10);
-  cout << Kth << endl;
+  std::cout << Kth << std::endl;
 }
 
 void TEST_QSort() {
-  cout << "TEST QSort\n";
+  std::cout << "TEST QSort\n";
 
   int array[10] = { 1, 8, 7, 6, 9, 10, 2, 3, 16, 4 };
 
-  cout << "Before: ";
+  std::cout << "Before: ";
   printArray(array, 10, 0);
 
   quick_sort(array, 0, 9);
 
-  cout << "After: ";
+  std::cout << "After: ";
   printArray(array, 10, 0);
 }
 
 void TEST_HeapSort() {
-  cout << "Test HeapSort" << endl;
+  std::cout << "Test HeapSort" << std::endl;
   int array[10] = { 1, 8, 7, 6, 9, 10, 2, 3, 16, 4 };
-  cout << "Before: ";
+  std::cout << "Before: ";
   printArray(array, 10, 0);
 
   HeapSort(array, 10);
 
-  cout << "After: ";
+  std::cout << "After: ";
   printArray(array, 10, 0);
 }
 
 void TEST_MergeSort() {
-  cout << "Test MergeSort" << endl;
+  std::cout << "Test MergeSort" << std::endl;
   int array[10] = { 1, 8, 7, 6, 9, 10, 2, 3, 16, 4 };
-  cout << "Before: ";
+  std::cout << "Before: ";
   printArray(array, 10, 0);
 
   MergeSort(array, 0, 10);
 
-  cout << "After: ";
+  std::cout << "After: ";
   printArray(array, 10, 0);
 }
 
