@@ -30,7 +30,9 @@ struct TreeNode {
     }
 };
 
-class Solution {
+// This is accepted.
+// But not efficient.
+class Solution_ng {
 public:
     int count(TreeNode* node) {
         if (!node)
@@ -51,5 +53,29 @@ public:
         }
 
         return kthSmallest(root->left, k);
+    }
+};
+
+class Solution {
+public:
+    // Count down k from the smallest element.
+    // When K == 0, we get the kth.
+    int countDown(TreeNode* node, int &k) {
+        if (!node)
+            return 0;
+
+        // Visit left nodes first
+        int result = countDown(node->left, k);
+        if (k == 0)
+            return result;
+
+        if (--k == 0)
+            return node->val;
+
+        return countDown(node->right, k);
+    }
+
+    int kthSmallest(TreeNode* root, int k) {
+        return countDown(root, k);
     }
 };
