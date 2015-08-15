@@ -1,6 +1,14 @@
-// Source : https://oj.leetcode.com/problems/two-sum/
-// Author : Hao Chen
-// Date   : 2014-06-17
+/*
+ * TwoSum.h
+ *
+ *  Created on: Aug 15, 2015 9:05:01 AM
+ *      Author: Hao Liu
+ *      E-mail: haoliu233@163.com
+ */
+
+#ifndef LEETCODE_TWOSUM_TWOSUM_H_
+#define LEETCODE_TWOSUM_TWOSUM_H_
+
 
 /**********************************************************************************
 *
@@ -47,7 +55,7 @@ using namespace std;
 // Wrong Answer
 // Input: [3,2,4], 6
 // Output: [1,2]
-// Expected: [2,3] 
+// Expected: [2,3]
 class Solution {
 public:
   vector<int> TwoSum(vector<int> &nums, int target) {
@@ -75,3 +83,6 @@ public:
     return result;
   }
 };
+
+
+#endif /* LEETCODE_TWOSUM_TWOSUM_H_ */

@@ -1,6 +1,14 @@
-// Source : https://leetcode.com/problems/kth-smallest-element-in-a-bst/
-// Author : Hao Chen
-// Date   : 2015-07-03
+/*
+ * KthSmallestElementInABst.h
+ *
+ *  Created on: Aug 15, 2015 9:06:10 AM
+ *      Author: Hao Liu
+ *      E-mail: haoliu233@163.com
+ */
+
+#ifndef LEETCODE_KTHSMALLESTELEMENTINABST_KTHSMALLESTELEMENTINABST_H_
+#define LEETCODE_KTHSMALLESTELEMENTINABST_KTHSMALLESTELEMENTINABST_H_
+
 
 /**********************************************************************************
  *
@@ -79,3 +87,6 @@ public:
         return countDown(root, k);
     }
 };
+
+
+#endif /* LEETCODE_KTHSMALLESTELEMENTINABST_KTHSMALLESTELEMENTINABST_H_ */
