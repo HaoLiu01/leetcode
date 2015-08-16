@@ -24,27 +24,43 @@
  *
  **********************************************************************************/
 
-int partition(vector<int>& nums, int head, int tail) {
-    int i = head, j = tail;
-    while(nums[++i] <= nums[head]);
+#include <vector>
 
-    while(nums[--j] >= nums[head]);
+void Exchange(std::vector<int> &array, int i, int j) {
+  int tmp = array[i];
+  array[i] = array[j];
+  array[j] = tmp;
+}
 
-    for (int i = head + 1, j = tail; i != j;) {
-        ;
+// Copy from quick sort.
+int partition(std::vector<int> &array, int s, int t) {
+  int i = s - 1;
+  int pivot = array[t];
+  for (int j = s; j < t; j++) {
+    if (array[j] < pivot) {
+      i++;
+      Exchange(array, i, j);
     }
+  }
+
+  Exchange(array, i + 1, t);
+  return i + 1;
 }
 
-int reverse(vector<int>& nums, int head, int tail, int k) {
-    if (head > tail)
-        return 0;
+int findKthFromHeadToTail(std::vector<int> &array, int head, int tail, int k) {
+	int p = partition(array, head, tail);
+	int nth = tail - p + 1;
 
-    int mid = head + tail / 2;
-
+	if (nth == k)
+		return array[p];
+	if (nth < k)
+		return findKthFromHeadToTail(array, head, p - 1, k - nth);
+	return findKthFromHeadToTail(array, p + 1, tail, k);
 }
 
-int findKthLargest(vector<int>& nums, int k) {
-    return 0;
+int findKthLargest(std::vector<int>& nums, int k) {
+	std::vector<int> array = nums;
+	return findKthFromHeadToTail(array, 0, array.size() - 1, k);
 }
 
 #endif /* LEETCODE_KTHLARGESTELEMENTINANARRAY_KTHLARGESTELEMENTINANARRAY_H_ */
