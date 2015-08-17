@@ -4,6 +4,7 @@
 #include "3Sum/3Sum.h"
 #include "TwoSum/TwoSum.h"
 #include "3SumClosest/3SumClosest.h"
+#include "4Sum/4Sum.h"
 #include "KthLargestElementInAnArray/KthLargestElementInAnArray.h"
 #include "utils.h"
 
@@ -33,6 +34,10 @@ int main() {
     int res3 = threeSumClosest(threeSumV, 3);
     cout << "Test 3 Sum closest:" << endl;
     cout << res3 << endl;
+
+    vector<vector<int> > res4 = fourSum(threeSumV, 3);
+    cout << "Test 4 Sum:" << endl;
+    util::output(res4);
 
     return 0;
 }
