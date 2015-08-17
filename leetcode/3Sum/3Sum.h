@@ -1,9 +1,9 @@
 /*
- * 3sum.h
+ * 3Sum.h
  *
  *  Created on: Aug 15, 2015 9:04:24 AM
  *      Author: Hao Liu
- *      E-mail: haoliu233@163.com
+ *      E-mail: hao1iu@163.com
  */
 
 #ifndef LEETCODE_3SUM_3SUM_H_

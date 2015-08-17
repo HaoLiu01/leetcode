@@ -1,8 +1,9 @@
 #include <iostream>
 #include <assert.h>
 
+#include "3Sum/3Sum.h"
 #include "TwoSum/TwoSum.h"
-#include "3sum/3sum.h"
+#include "3SumClosest/3SumClosest.h"
 #include "KthLargestElementInAnArray/KthLargestElementInAnArray.h"
 #include "utils.h"
 
@@ -28,6 +29,10 @@ int main() {
     int res2 = findKthLargest(threeSumV, 3);
     cout << "Test Kth Largest:" << endl;
     cout << res2 << endl;
+
+    int res3 = threeSumClosest(threeSumV, 3);
+    cout << "Test 3 Sum closest:" << endl;
+    cout << res3 << endl;
 
     return 0;
 }
