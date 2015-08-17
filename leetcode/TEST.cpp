@@ -4,8 +4,10 @@
 #include "3Sum/3Sum.h"
 #include "TwoSum/TwoSum.h"
 #include "3SumClosest/3SumClosest.h"
-#include "4Sum/4Sum.h"
 #include "KthLargestElementInAnArray/KthLargestElementInAnArray.h"
+#include "4Sum/4Sum.h"
+#include "MedianOfTwoSortedArrays/MedianOfTwoSortedArrays.h"
+
 #include "utils.h"
 
 using namespace std;
@@ -35,9 +37,15 @@ int main() {
     cout << "Test 3 Sum closest:" << endl;
     cout << res3 << endl;
 
-    vector<vector<int> > res4 = fourSum(threeSumV, 3);
+    vector<vector<int> > res4 = fourSum(threeSumV, -16);
     cout << "Test 4 Sum:" << endl;
     util::output(res4);
+
+    int A[] = { -1, 0, 4, 9 };
+    int B[] = { -3 };
+    vector<int> AA(A, A + 4);
+    vector<int> BB(B, B + 1);
+    cout << "Test median of two sorted arrays: \n  " << MedianOfTwoSortedArrays(AA, BB) << endl;
 
     return 0;
 }
