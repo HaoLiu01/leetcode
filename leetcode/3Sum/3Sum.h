@@ -33,18 +33,22 @@
 
 using namespace std;
 
-bool compare(int i, int j) {
+bool compare(int i, int j)
+{
     return i < j;
 }
 
 // Time Limit Exceeded
-vector<vector<int> > threeSum(vector<int>& nums) {
+vector<vector<int> > threeSum(vector<int>& nums)
+{
     vector<vector<int> > result;
 
     sort(nums.begin(), nums.end());
 
-    for (unsigned i = 0; i < nums.size(); i++) {
-        for (unsigned j = nums.size() - 1; j > i + 1; j--) {
+    for (unsigned i = 0; i < nums.size(); i++)
+    {
+        for (unsigned j = nums.size() - 1; j > i + 1; j--)
+        {
             int op0 = nums[i];
             if (op0 > 0)
                 break;
@@ -53,10 +57,13 @@ vector<vector<int> > threeSum(vector<int>& nums) {
             if (op1 < 0)
                 break;
 
-            for (unsigned k = i + 1; k < j; k++) {
+            for (unsigned k = i + 1; k < j; k++)
+            {
                 int sum = nums[k] + op0 + op1;
-                if (sum == 0) {
-                    int tmp[] = { op0, nums[k], op1 };
+                if (sum == 0)
+                {
+                    int tmp[] =
+                    { op0, nums[k], op1 };
                     result.push_back(vector<int>(tmp, tmp + 3));
                 }
                 // no need to search follwing.

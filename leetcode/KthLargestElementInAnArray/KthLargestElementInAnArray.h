@@ -26,41 +26,47 @@
 
 #include <vector>
 
-void Exchange(std::vector<int> &array, int i, int j) {
-  int tmp = array[i];
-  array[i] = array[j];
-  array[j] = tmp;
+void Exchange(std::vector<int> &array, int i, int j)
+{
+    int tmp = array[i];
+    array[i] = array[j];
+    array[j] = tmp;
 }
 
 // Copy from quick sort.
-int partition(std::vector<int> &array, int s, int t) {
-  int i = s - 1;
-  int pivot = array[t];
-  for (int j = s; j < t; j++) {
-    if (array[j] < pivot) {
-      i++;
-      Exchange(array, i, j);
+int partition(std::vector<int> &array, int s, int t)
+{
+    int i = s - 1;
+    int pivot = array[t];
+    for (int j = s; j < t; j++)
+    {
+        if (array[j] < pivot)
+        {
+            i++;
+            Exchange(array, i, j);
+        }
     }
-  }
 
-  Exchange(array, i + 1, t);
-  return i + 1;
+    Exchange(array, i + 1, t);
+    return i + 1;
 }
 
-int findKthFromHeadToTail(std::vector<int> &array, int head, int tail, int k) {
-	int p = partition(array, head, tail);
-	int nth = tail - p + 1;
+int findKthFromHeadToTail(std::vector<int> &array, int head, int tail, int k)
+{
+    int p = partition(array, head, tail);
+    int nth = tail - p + 1;
 
-	if (nth == k)
-		return array[p];
-	if (nth < k)
-		return findKthFromHeadToTail(array, head, p - 1, k - nth);
-	return findKthFromHeadToTail(array, p + 1, tail, k);
+    if (nth == k)
+        return array[p];
+    if (nth < k)
+        return findKthFromHeadToTail(array, head, p - 1, k - nth);
+    return findKthFromHeadToTail(array, p + 1, tail, k);
 }
 
-int findKthLargest(std::vector<int>& nums, int k) {
-	std::vector<int> array = nums;
-	return findKthFromHeadToTail(array, 0, array.size() - 1, k);
+int findKthLargest(std::vector<int>& nums, int k)
+{
+    std::vector<int> array = nums;
+    return findKthFromHeadToTail(array, 0, array.size() - 1, k);
 }
 
 #endif /* LEETCODE_KTHLARGESTELEMENTINANARRAY_KTHLARGESTELEMENTINANARRAY_H_ */

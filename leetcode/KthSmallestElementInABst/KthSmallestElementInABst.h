@@ -31,21 +31,25 @@
 
 // This is accepted.
 // But not efficient.
-int count(TreeNode* node) {
+int count(TreeNode* node)
+{
     if (!node)
         return 0;
     return count(node->left) + count(node->right) + 1;
 }
 
-int kthSmallest_ng(TreeNode* root, int k) {
+int kthSmallest_ng(TreeNode* root, int k)
+{
     int num = count(root->left);
 
     // The smallest one;
-    if (num == k - 1) {
+    if (num == k - 1)
+    {
         return root->val;
     }
 
-    if (num < k - 1) {
+    if (num < k - 1)
+    {
         return kthSmallest_ng(root->right, k - num - 1);
     }
 
@@ -54,7 +58,8 @@ int kthSmallest_ng(TreeNode* root, int k) {
 
 // Count down k from the smallest element.
 // When K == 0, we get the kth.
-int countDown(TreeNode* node, int &k) {
+int countDown(TreeNode* node, int &k)
+{
     if (!node)
         return 0;
 
@@ -69,7 +74,8 @@ int countDown(TreeNode* node, int &k) {
     return countDown(node->right, k);
 }
 
-int kthSmallest(TreeNode* root, int k) {
+int kthSmallest(TreeNode* root, int k)
+{
     return countDown(root, k);
 }
 
