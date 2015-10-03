@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 // Definition for a binary tree node.
 struct TreeNode
@@ -30,5 +31,12 @@ void output(vector<vector<int> > &input)
 {
     for (vector<int> vec : input)
         output(vec);
+}
+
+void output(vector<string> vec)
+{
+    for (auto element : vec)
+        std::cout << element << " ";
+    std::cout << std::endl;
 }
 }

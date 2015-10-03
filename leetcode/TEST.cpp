@@ -1,5 +1,6 @@
 #include <iostream>
 #include <assert.h>
+#include <string>
 
 #include "3Sum/3Sum.h"
 #include "TwoSum/TwoSum.h"
@@ -8,6 +9,7 @@
 #include "4Sum/4Sum.h"
 #include "MedianOfTwoSortedArrays/MedianOfTwoSortedArrays.h"
 #include "triangle/triangle.h"
+#include "Anagrams/anagrams.h"
 
 #include "utils.h"
 
@@ -72,6 +74,11 @@ int main()
     triangle_in.push_back(v3);
     cout << "The minimal total in triangle is:" << minimumTotal(triangle_in)
             << endl;
+
+    // Test Anagrams
+    string anaArray[] = {"tea","and","ate","eat","den"};
+    vector<string> anaVec(anaArray, anaArray + 5);
+    util::output(anagrams(anaVec));
 
     return 0;
 }
