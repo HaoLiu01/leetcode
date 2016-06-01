@@ -10,6 +10,7 @@
 #include "MedianOfTwoSortedArrays/MedianOfTwoSortedArrays.h"
 #include "triangle/triangle.h"
 #include "Anagrams/anagrams.h"
+#include "344_ReverseString/ReverseString.h"
 
 #include "utils.h"
 
@@ -80,5 +81,10 @@ int main()
     vector<string> anaVec(anaArray, anaArray + 5);
     util::output(anagrams(anaVec));
 
+    // Test ReserveString
+    string a = reverseString("hello");
+    cout << "The reverse string of \"hello\"  is " << a;
+
+    cout << endl;
     return 0;
 }
