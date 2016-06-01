@@ -84,6 +84,8 @@ int main()
     // Test ReserveString
     string a = reverseString("hello");
     cout << "The reverse string of \"hello\"  is " << a;
+    a = reverseString2("hello");
+    cout << "The reverse string of \"hello\"  is " << a;
 
     cout << endl;
     return 0;

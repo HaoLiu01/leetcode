@@ -40,4 +40,16 @@ string reverseString(string s) {
     return s;
 }
 
+string reverseString2(string s) {
+    if (s.empty())
+        return s;
+
+    const char *sptr = s.c_str();
+    char nptr[s.size()];
+    for (int i = s.size() - 1; i >= 0; i--)
+        nptr[i] = *sptr++;
+    s.assign(nptr, s.size());
+    return s;
+}
+
 #endif /* LEETCODE_344_REVERSESTRING_REVERSESTRING_H_ */
