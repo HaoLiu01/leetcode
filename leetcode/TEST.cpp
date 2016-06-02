@@ -12,6 +12,7 @@
 #include "Anagrams/anagrams.h"
 #include "344_ReverseString/ReverseString.h"
 #include "338_CountingBits/CountingBits.h"
+#include "source/258_AddDigits.h"
 
 #include "utils.h"
 
@@ -98,6 +99,11 @@ int main()
         // Test CountingBits
         vector<int> vec = countBits(16);
         util::output(vec);
+    }
+
+    {
+        cout << "addDigits(0) = " << addDigits(0) << endl;
+        cout << "addDigits(1385) = " << addDigits(1385) << endl;
     }
 
     cout << endl;
