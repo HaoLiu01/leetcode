@@ -1,8 +1,8 @@
 /*
- * common.h
+ common.h
  *
- *  Created on: Jun 1, 2016
- *      Author: hao
+  Created on: Jun 1, 2016
+      Author: hao
  */
 
 #ifndef LEETCODE_COMMON_H_
@@ -14,5 +14,11 @@
 
 using namespace std;
 
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
 
-#endif /* LEETCODE_COMMON_H_ */
+#endif /LEETCODE_COMMON_H_ */
