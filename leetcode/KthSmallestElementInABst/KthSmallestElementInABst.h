@@ -27,7 +27,7 @@
  * Credits:Special thanks to @ts for adding this problem and creating all test cases.
  **********************************************************************************/
 
-#include "utils.h"
+#include "common.h"
 
 // This is accepted.
 // But not efficient.
