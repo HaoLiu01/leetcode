@@ -111,8 +111,8 @@ int main() {
   }
 
   {
-    int myints[] = { 0, 1, 0, 3, 12 };
-    vector<int> nums(myints, myints + 5);
+    int myints[] = { 0, 1, 0, 3, 12, 0 };
+    vector<int> nums(myints, myints + 6);
     moveZeroes(nums);
     cout << "The result of moveZeroes is:";
     util::output(nums);
