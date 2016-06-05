@@ -14,6 +14,7 @@
 #include "338_CountingBits/CountingBits.h"
 #include "source/258_AddDigits.h"
 #include "source/349_IntersectionOfTwoArray.h"
+#include "source/283_MoveZeroes.h"
 
 #include "common.h"
 
@@ -107,7 +108,20 @@ int main() {
     vector<int> res = intersection(nums1, nums2);
     cout << "The result of insertsection is:";
     util::output(res);
-    cout << endl;
+  }
+
+  {
+    int myints[] = { 0, 1, 0, 3, 12 };
+    vector<int> nums(myints, myints + 5);
+    moveZeroes(nums);
+    cout << "The result of moveZeroes is:";
+    util::output(nums);
+
+    vector<int> nums1;
+    nums1.push_back(0);
+    moveZeroes(nums1);
+    cout << "The result of moveZeroes is:";
+    util::output(nums1);
   }
 
   cout << endl;
