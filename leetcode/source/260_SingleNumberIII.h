@@ -22,10 +22,12 @@ Your algorithm should run in linear runtime complexity. Could you implement it u
 #include "common.h"
 
 vector<int> singleNumber(vector<int>& nums) {
-    int eor = 0;
-    for (int i = 0; i < nums.size(); i++) {
-        eor ^= nums[i];
-    }
+//    int eor = 0;
+//    for (int i = 0; i < nums.size(); i++) {
+//        eor ^= nums[i];
+//    }
+
+
 }
 
 #endif /* LEETCODE_SOURCE_260_SINGLENUMBERIII_H_ */
