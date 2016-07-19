@@ -42,7 +42,7 @@ vector<int> singleNumber(vector<int>& nums) {
         eor ^= nums[i];
     }
 
-    int mask = eor & (~(eor - 1));
+    int lowbit = eor & (~(eor - 1));
     int A = 0, B = 0;
     for (int i = 0; i < nums.size(); i++) {
         if (lowbit & nums[i])
