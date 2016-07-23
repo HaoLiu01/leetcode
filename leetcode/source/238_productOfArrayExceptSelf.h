@@ -22,14 +22,37 @@ not count as extra space for the purpose of space complexity analysis.)*/
 
 #include "common.h"
 
+// With division
 vector<int> productExceptSelf(vector<int>& nums) {
     int totalProduct = nums[0];
-    for (int i = 1; i < nums.size(); i++)
+    int countZero = 0;
+    for (int i = 1; i < nums.size(); i++) {
         totalProduct *= nums[i];
+        if (nums[i] == 0) {
+            countZero ++;
+            if (countZero > 1)
+                break;
+        }
+    }
 
     vector<int> res;
-    for (int i = 0; i < nums.size(); i++)
-        res.push_back(totalProduct / nums[i]);
+
+    if (countZero > 1) {
+        for (int i = 0; i < nums.size(); i++)
+            res.push_back(0);
+    } else {
+        for (int i = 0; i < nums.size(); i++)
+            if (nums[i] != 0) {
+                res.push_back(totalProduct / nums[i]);
+            } else {
+                int newTotal = 1;
+                for (int j = 0; j < nums.size(); j++) {
+                    if (i != j)
+                        newTotal *= nums[j];
+                }
+                res.push_back(newTotal);
+            }
+    }
 
     return res;
 }
