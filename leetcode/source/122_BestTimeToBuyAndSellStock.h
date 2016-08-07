@@ -24,6 +24,8 @@ times). However, you may not engage in multiple transactions at the same time
 //        0      if n = 0
 // f(n) = max{ Pn - Pn-1 + f(n-2), Pn - Pn-2 + f(n-3), ... }
 
+// Improve: if (Pn < Pn-1) { f(n) = f(n-1); break }
+
 // Time Limit Exceeded
 // Last executed input: more than 80,000 elements.
 int maxProfit(vector<int>& prices) {
@@ -35,6 +37,8 @@ int maxProfit(vector<int>& prices) {
         maxArray[i] = maxArray[i - 1];
         for (int j = i - 1; j >= 0; j--) {
             int choise = prices[i] - prices[j];
+            if (choise <= 0)
+                break;
             if (j - 1 >= 0)
                 choise += maxArray[j - 1];
             maxArray[i] = std::max(maxArray[i], choise);
