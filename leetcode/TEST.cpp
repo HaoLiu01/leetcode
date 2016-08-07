@@ -16,6 +16,7 @@
 #include "source/349_IntersectionOfTwoArray.h"
 #include "source/283_MoveZeroes.h"
 #include "source/347_TopKFrequentElements.h"
+#include "source/168_ExcelSheetColumnTitle.h"
 
 #include "common.h"
 
@@ -130,6 +131,12 @@ int main() {
       vector<int> nums(input, input + 6);
       vector<int> res = topKFrequent(nums, 2);
       util::output(res);
+  }
+
+  {
+      cout << convertToTitle(1) << endl;
+      cout << convertToTitle(27) << endl;
+      cout << convertToTitle(54) << endl;
   }
 
   cout << endl;
