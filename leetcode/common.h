@@ -9,6 +9,8 @@
 #define LEETCODE_COMMON_H_
 
 #include <vector>
+#include <map>
+#include <unordered_map>
 #include <algorithm>
 #include <string>
 #include <set>

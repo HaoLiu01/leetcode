@@ -15,6 +15,7 @@
 #include "source/258_AddDigits.h"
 #include "source/349_IntersectionOfTwoArray.h"
 #include "source/283_MoveZeroes.h"
+#include "source/347_TopKFrequentElements.h"
 
 #include "common.h"
 
@@ -122,6 +123,13 @@ int main() {
     moveZeroes(nums1);
     cout << "The result of moveZeroes is:";
     util::output(nums1);
+  }
+
+  {
+      int input[] = {1,1,1,2,2,3};
+      vector<int> nums(input, input + 6);
+      vector<int> res = topKFrequent(nums, 2);
+      util::output(res);
   }
 
   cout << endl;
