@@ -17,6 +17,7 @@
 #include "source/283_MoveZeroes.h"
 #include "source/347_TopKFrequentElements.h"
 #include "source/168_ExcelSheetColumnTitle.h"
+#include "source/242_ValidAnagram.h"
 
 #include "common.h"
 
@@ -137,6 +138,13 @@ int main() {
       cout << convertToTitle(1) << endl;
       cout << convertToTitle(27) << endl;
       cout << convertToTitle(54) << endl;
+  }
+
+
+  {
+      // 242_ValidAnagram
+      cout << isAnagram("anagram", "nagaram") << endl;
+      cout << isAnagram("", "") << endl;
   }
 
   cout << endl;
