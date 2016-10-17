@@ -28,6 +28,7 @@ solution.getRandom();
 */
 
 #include "common.h"
+#include <time.h>
 
 /**
  * Definition for singly-linked list.
@@ -49,6 +50,8 @@ public:
 
     /** Returns a random node's value. */
     int getRandom() {
+        srand((unsigned)time(NULL));
+
         // int t = rand() % len
         int target = rand() % len;
         ListNode* cur = head;
