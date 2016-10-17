@@ -18,6 +18,7 @@
 #include "source/347_TopKFrequentElements.h"
 #include "source/168_ExcelSheetColumnTitle.h"
 #include "source/242_ValidAnagram.h"
+#include "source/382_LinkedListRandomNode.h"
 
 #include "common.h"
 
@@ -145,6 +146,16 @@ int main() {
       // 242_ValidAnagram
       cout << isAnagram("anagram", "nagaram") << endl;
       cout << isAnagram("", "") << endl;
+  }
+
+  {
+//      382 LinkedListRandom
+      ListNode *head = new ListNode(1);
+      head->next = new ListNode(2);
+      head->next->next = new ListNode(3);
+      Solution_short solution(head);
+      cout << "382 LinkedListRandom";
+      cout << solution.getRandom() << " " << solution.getRandom() << " " << solution.getRandom() << endl;
   }
 
   cout << endl;
