@@ -88,7 +88,8 @@ public:
         ListNode *cur = head->next;
         while (cur) {
             int j = rand() % i;
-            if (j == 0) res = cur->val;
+            if (j == 0)
+                res = cur->val;
             ++i;
             cur = cur->next;
         }
@@ -97,7 +98,34 @@ public:
 private:
     ListNode *head;
 };
+/*
+水塘抽样
+Dictionary of Algorithms and Data Structures[2]所载的O(n)算法，包含以下步骤（假设阵列S以0开始标示）：
 
+從S中抽取首k項放入「水塘」中
+對於每一個S[j]項（j ≥ k）：
+   隨機產生一個範圍從0到j的整數r
+   若 r < k 則把水塘中的第r項換成S[j]項*/
+
+int main() {
+    int S[10] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    const int k = 4;
+    int R[k];
+    int i, j;
+    for (i = 0; i < k; i++)
+        R[i] = S[i];
+
+    for (i = k; i < sizeof(S) / sizeof(S[0]); i++) {
+        srand(time(NULL));
+        j = rand() % i;
+        if (j < k)
+            R[j] = S[i];
+    }
+
+    for (int i = 0; i < k; i++)
+        cout << R[i] << ends;
+    cout << endl;
+}
 
 /**
  * Your Solution object will be instantiated and called as such:
