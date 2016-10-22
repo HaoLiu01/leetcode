@@ -19,6 +19,7 @@
 #include "source/168_ExcelSheetColumnTitle.h"
 #include "source/242_ValidAnagram.h"
 #include "source/382_LinkedListRandomNode.h"
+#include "source/383_RansomNote.h"
 
 #include "common.h"
 
@@ -156,6 +157,11 @@ int main() {
       Solution_short solution(head);
       cout << "382 LinkedListRandom";
       cout << solution.getRandom() << " " << solution.getRandom() << " " << solution.getRandom() << endl;
+  }
+
+  {
+//	  383_ransomNote
+	  cout << "Ransom note ('aa', 'aba'): " << canConstruct("aa", "aba") << endl;
   }
 
   cout << endl;

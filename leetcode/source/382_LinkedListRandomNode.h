@@ -107,6 +107,7 @@ Dictionary of Algorithms and Data Structures[2]所载的O(n)算法，包含以�
    隨機產生一個範圍從0到j的整數r
    若 r < k 則把水塘中的第r項換成S[j]項*/
 
+/*
 int main() {
     int S[10] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
     const int k = 4;
@@ -126,6 +127,7 @@ int main() {
         cout << R[i] << ends;
     cout << endl;
 }
+*/
 
 /**
  * Your Solution object will be instantiated and called as such:
