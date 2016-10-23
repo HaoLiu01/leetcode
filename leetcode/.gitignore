@@ -1,0 +1,5 @@
+build
+.cproject
+.project
+.sconsign.dblite
+.settings/
