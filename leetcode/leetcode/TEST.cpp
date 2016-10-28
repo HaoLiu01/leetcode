@@ -20,6 +20,7 @@
 #include "source/242_ValidAnagram.h"
 #include "source/382_LinkedListRandomNode.h"
 #include "source/383_RansomNote.h"
+#include "source/419_BattleshipsInABoard.h"
 
 #include "common.h"
 
@@ -162,6 +163,28 @@ int main() {
   {
 //	  383_ransomNote
 	  cout << "Ransom note ('aa', 'aba'): " << canConstruct("aa", "aba") << endl;
+  }
+
+  {
+	  // 419 battleships in a board
+	  vector<vector<char>> board;
+	  {
+		  vector<char> row(4, '.');
+		  row[0] = row[3] = 'X';
+		  board.push_back(row);
+	  }
+	  {
+		  vector<char> row(4, '.');
+		  row[3] = 'X';
+		  board.push_back(row);
+	  }
+	  {
+		  vector<char> row(4, '.');
+		  row[3] = 'X';
+		  board.push_back(row);
+	  }
+
+	  cout << "Count ships: " << countBattleships(board);
   }
 
   cout << endl;
