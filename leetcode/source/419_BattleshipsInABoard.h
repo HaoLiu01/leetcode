@@ -36,48 +36,43 @@ int countBattleships(vector<vector<char>>& board) {
 
 	int count = 0;
 	size_t width = board[0].size();
-	vector<int> countAdjacentXVertical(width, 0);  // 记录竖直的船的长度
+	vector<int> cacheY(width, 0);  // 记录竖直的船的长度
 
 	for (int i = 0; i < board.size(); i++) {
 		vector<char> &row = board[i];
-		int countAdjacentXHorizontal = 0;  // 记录横向的船的长度
+		int cacheX = 0;  // 记录横向的船的长度
 
-		int j = 0
-		for (; j < width; j++) {
-			if (row[j] == '.') {
-				if (countAdjacentXHorizontal == 1) {
-					countAdjacentXVertical[j - 1]++;  // 只有一个‘X’，视作竖直的船
-				} else if (countAdjacentXHorizontal > 1) {
-					count++;  // 横向的船终止
-					countAdjacentXHorizontal = 0;
-				}
-
-				if (countAdjacentXVertical[j] > 0) {
-					count++;  // 竖直的船终止
-					countAdjacentXVertical[j] = 0;
-				}
+		for (int j = 0; j < width; j++) {
+			if (row[j] == 'X') {
+				cacheX++;
 				continue;
 			}
 
-			countAdjacentXHorizontal++;
+			if (cacheX == 1)
+				cacheY[j - 1] = cacheY[j - 1] + 1;  // 只有一个‘X’，视作竖直的船
+			else if (cacheX > 1)
+				count++;  // 横向的船终止
+			cacheX = 0;
 
-			// 处理每一行的最后一个'x'
-			if (j == width - 1) {
-				if (countAdjacentXHorizontal == 1) {
-					countAdjacentXVertical[j]++;  // 视作竖直的船
-				} else if (countAdjacentXHorizontal > 1) {
-					count++;  // 横向的船终止
-				}
+			if (cacheY[j] > 0) {
+				count++;  // 竖直的船终止
+				cacheY[j] = 0;
 			}
+			continue;
 		}
 
-		// 处理最后一行中的竖直的船
-		if (i == board.size() - 1) {
-			for (int j = 0; j < width; j++)
-				if (countAdjacentXVertical[j])
-					count++;  // 竖直的船
+		// 处理每一行的最后一个'X'
+		if (cacheX == 1) {
+			cacheY[width - 1]++;  // 视作竖直的船
+		} else if (cacheX > 1) {
+			count++;  // 横向的船终止
 		}
 	}
+
+	// 处理最后一行中的竖直的船
+	for (int j = 0; j < width; j++)
+		if (cacheY[j])
+			count++;  // 竖直的船
 
 	return count;
 }
