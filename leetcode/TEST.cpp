@@ -187,6 +187,11 @@ int main() {
 	  cout << "Count ships: " << countBattleships(board);
   }
 
+  {
+    vector<vector<char>> board;
+    cout << "Hello: " << countBattleships(board);
+  }
+
   cout << endl;
   return 0;
 }
