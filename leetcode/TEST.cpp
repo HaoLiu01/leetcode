@@ -195,7 +195,7 @@ int main() {
   }
 
   {
-	  cout << "First unique char: " << firstUniqChar("loveleetcode") << " | " << firstUniqChar("leetcode") << endl;
+	  cout << "First unique char: " << firstUniqChar2("loveleetcode") << " | " << firstUniqChar("leetcode") << endl;
   }
 
   cout << endl;

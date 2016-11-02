@@ -30,4 +30,18 @@ int firstUniqChar(string s) {
     return -1;
 }
 
+/*
+Solutions online
+*/
+
+int firstUniqChar2(string s) {
+	int table[26] = { 0 };
+	for (auto c : s)
+		table[c - 'a']++;
+	for (int i = 0; i < s.length(); i++)
+		if (table[s[i] - 'a'] == 1)
+			return i;
+	return -1;
+}
+
 #endif //LEETCODE_387_FIRSTUNIQUECHAR_H
