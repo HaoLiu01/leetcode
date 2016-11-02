@@ -21,6 +21,7 @@
 #include "source/382_LinkedListRandomNode.h"
 #include "source/383_RansomNote.h"
 #include "source/419_BattleshipsInABoard.h"
+#include "source/387_FirstUniqueChar.h"
 
 #include "common.h"
 
@@ -184,12 +185,17 @@ int main() {
 		  board.push_back(row);
 	  }
 
-	  cout << "Count ships: " << countBattleships(board);
+	  cout << "Count ships: " << countBattleships(board) << endl;
   }
 
   {
-    vector<vector<char>> board;
-    cout << "Hello: " << countBattleships(board);
+	  // Battle ships
+	  vector<vector<char>> board;
+	  cout << "Hello: " << countBattleships(board) << endl;
+  }
+
+  {
+	  cout << "First unique char: " << firstUniqChar("loveleetcode") << " | " << firstUniqChar("leetcode") << endl;
   }
 
   cout << endl;
