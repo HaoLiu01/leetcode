@@ -22,6 +22,7 @@
 #include "source/383_RansomNote.h"
 #include "source/419_BattleshipsInABoard.h"
 #include "source/387_FirstUniqueChar.h"
+#include "source/394_DecodeString.h"
 
 #include "common.h"
 
@@ -189,13 +190,20 @@ int main() {
   }
 
   {
-	  // Battle ships
+	  // 419 Battle ships
 	  vector<vector<char>> board;
 	  cout << "Hello: " << countBattleships(board) << endl;
   }
 
   {
+	  // 387 First Unique Char
 	  cout << "First unique char: " << firstUniqChar2("loveleetcode") << " | " << firstUniqChar("leetcode") << endl;
+  }
+
+  {
+	  // 394 DecodeString
+	  cout << "DecodeString0: " << decodeString("3[a2[c]]ef") << endl;
+//	  cout << "DecodeString1: " << decodeString("2[abc]3[cd]ef") << endl;
   }
 
   cout << endl;
