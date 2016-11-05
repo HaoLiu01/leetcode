@@ -23,7 +23,7 @@ string decodeString(string s) {
 	int lastRB = s.rfind(']');
 
 	int nextStart = firstLB + 2;
-	while(isAlpha(s[nextStart]))
+	while (isAlpha(s[nextStart]))
 		nextStart++;
 
 	int num = atoi(s.substr(0, firstLB).c_str());
@@ -46,7 +46,7 @@ bool isDigital(char c) {
 
 string stringByDigital(const string &str, int num) {
 	string fullStr = str;
-	while(--num)
+	while (--num)
 		fullStr += str;
 	return fullStr;
 }
@@ -66,14 +66,14 @@ string parseStrPattern(const char *&pos) {
 		assert(*pos == '[');
 		++pos;
 
-		while(*pos != ']')
+		while (*pos != ']')
 			extStr += parseStrPattern(pos);
 		++pos;
 
 		extStr = stringByDigital(extStr, num);
 	}
 
-	while(isAlpha(*pos)) {
+	while (isAlpha(*pos)) {
 		extStr += *pos;
 		++pos;
 	}
@@ -84,8 +84,28 @@ string parseStrPattern(const char *&pos) {
 string decodeString2(string s) {
 	const char *pos = s.c_str();
 	string res;
-	while(*pos != 0)
+	while (*pos != 0)
 		res += parseStrPattern(pos);
 	return res;
 }
+
+// Another simple solution online
+string decodeString3(string s) {
+	auto found = s.find_last_of('[');
+	if (found == string::npos) {
+		return s;
+	} else {
+		auto iNum = found;
+		while (isdigit(s[iNum - 1]))
+			iNum--;
+		int num = stoi(s.substr(iNum, found - iNum));
+		auto foundEnd = s.find_first_of(']', found);
+		string mid = s.substr(found + 1, foundEnd - found - 1);
+		string midsum;
+		while (num-- > 0)
+			midsum += mid;
+		return decodeString(s.substr(0, iNum) + midsum + s.substr(foundEnd + 1));
+	}
+}
+
 #endif /* LEETCODE_SOURCE_394_DECODESTRING_H_ */
