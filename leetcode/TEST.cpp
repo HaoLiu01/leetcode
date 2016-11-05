@@ -202,8 +202,11 @@ int main() {
 
   {
 	  // 394 DecodeString
-	  cout << "DecodeString0: " << decodeString("3[a2[c]]ef") << endl;
-//	  cout << "DecodeString1: " << decodeString("2[abc]3[cd]ef") << endl;
+	  cout << "DecodeString0: " << decodeString2("3[a2[c]]ef") << endl;
+	  cout << "DecodeString1: " << decodeString2("2[abc]3[cd]ef") << endl;
+	  cout << "DecodeString1: " << decodeString2("leetcode") << endl;
+	  cout << "DecodeString1: " << decodeString2("") << endl;
+	  cout << "DecodeString1: " << decodeString2("2[2[b]]") << endl;
   }
 
   cout << endl;

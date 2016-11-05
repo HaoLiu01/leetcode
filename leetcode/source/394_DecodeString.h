@@ -14,6 +14,7 @@ bool isAlpha(char c) {
 	return (c - 'a' >= 0) && ('z' - c >= 0);
 }
 
+// 不能处理两个[][]并排的情况
 string decodeString(string s) {
 	int firstLB = s.find('[');
 	if (firstLB < 0)
@@ -39,4 +40,52 @@ string decodeString(string s) {
 	return res;
 }
 
+bool isDigital(char c) {
+	return (c - '0' >= 0) && ('9' - c >= 0);
+}
+
+string stringByDigital(const string &str, int num) {
+	string fullStr = str;
+	while(--num)
+		fullStr += str;
+	return fullStr;
+}
+
+// parse a pattern like PATTERN = num['a-z'PATTERN]'a-z'
+string parseStrPattern(const char *&pos) {
+	string extStr;
+
+	if (isDigital(*pos)) {
+		// get number
+		string numStr;
+		do {
+			numStr += *(pos++);
+		} while (isDigital(*pos));
+		int num = atoi(numStr.c_str());
+
+		assert(*pos == '[');
+		++pos;
+
+		while(*pos != ']')
+			extStr += parseStrPattern(pos);
+		++pos;
+
+		extStr = stringByDigital(extStr, num);
+	}
+
+	while(isAlpha(*pos)) {
+		extStr += *pos;
+		++pos;
+	}
+
+	return extStr;
+}
+
+string decodeString2(string s) {
+	const char *pos = s.c_str();
+	string res;
+	while(*pos != 0)
+		res += parseStrPattern(pos);
+	return res;
+}
 #endif /* LEETCODE_SOURCE_394_DECODESTRING_H_ */
