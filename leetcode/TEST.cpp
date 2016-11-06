@@ -23,6 +23,7 @@
 #include "source/419_BattleshipsInABoard.h"
 #include "source/387_FirstUniqueChar.h"
 #include "source/394_DecodeString.h"
+#include "source/169_MajorityElement.h"
 
 #include "common.h"
 
@@ -207,6 +208,13 @@ int main() {
 	  cout << "DecodeString1: " << decodeString2("leetcode") << endl;
 	  cout << "DecodeString1: " << decodeString2("") << endl;
 	  cout << "DecodeString1: " << decodeString2("2[2[b]]") << endl;
+  }
+
+  {
+	  // 169 Majority Element
+      int input[] = {6,5,5};
+      vector<int> nums(input, input + 3);
+	  cout << "Majority Element " << majorityElement(nums);
   }
 
   cout << endl;
