@@ -37,13 +37,15 @@ int majorityElement(vector<int>& nums) {
 }
 
 // A better solution online
-/*
 
-Find k different element, and "remove" them as a group, the remaining element must be the element that appears more than ⌊n/k⌋ times. (Detailed explanation is given in comment)
+/*
+Find k different element, and "remove" them as a group, the remaining
+element must be the element that appears more than ⌊n/k⌋ times.
 
 In this problem, k equals to 2.
 
-Thus we "remove" each pair of 2 different elements, and the remaining element that do not have its counterpart is the desired element.
+Thus we "remove" each pair of 2 different elements, and the remaining
+element that do not have its counterpart is the desired element.
 */
 
 int majorityElement2(vector<int> &num) {
