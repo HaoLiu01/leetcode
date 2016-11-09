@@ -30,6 +30,8 @@ This is not a valid board - as battleships will always have a cell separating be
 
 #include "common.h"
 
+// Problem: counting the last 'X' needs extra effort to record previous
+// status, which is also useless.
 int countBattleships(vector<vector<char>>& board) {
 	if (board.empty() || board[0].empty())
 		return 0;
@@ -73,6 +75,28 @@ int countBattleships(vector<vector<char>>& board) {
 	for (int j = 0; j < width; j++)
 		if (cacheY[j])
 			count++;  // 竖直的船
+
+	return count;
+}
+
+// Better. Count the first 'X'
+int countBattleships2(vector<vector<char>>& board) {
+	if (board.empty() || board[0].empty())
+		return 0;
+
+	int m = board.size(), n = board[0].size();
+	int count = 0;
+	for (int i = 0; i < m; i++) {
+		for (int j = 0; j < n; j++) {
+			if (board[i][j] == '.')
+				continue;
+			if (i > 0 && board[i - 1][j] == 'X')  // vertical
+				continue;
+			if (j > 0 && board[i][j - 1] == 'X')  // horizontal
+				continue;
+			count++;
+		}
+	}
 
 	return count;
 }
