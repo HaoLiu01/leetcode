@@ -220,33 +220,6 @@ int main() {
 		cout << "Majority Element " << majorityElement(nums) << endl;
 	}
 
-	{
-		// 229 Majority Element II
-		{
-			int input[] = { 6, 5, 5 };
-			vector<int> nums(input, input + 3);
-			cout << "Majority Element II: ";
-			vector<int> res = majorityElementII(nums);
-			util::output(res);
-		}
-
-		{
-			int input[] = { 6, 5, 5, 6, 7, 7, 5 };
-			vector<int> nums(input, input + 7);
-			cout << "Majority Element II: ";
-			vector<int> res = majorityElementII(nums);
-			util::output(res);
-		}
-
-		{
-			int input[] = { 6, 5, 5, 6, 7, 7, 8, 8, 9 };
-			vector<int> nums(input, input + 7);
-			cout << "Majority Element II: ";
-			vector<int> res = majorityElementII(nums);
-			util::output(res);
-		}
-	}
-
 	cout << endl;
 	return 0;
 }
